@@ -1,0 +1,54 @@
+﻿@model MvcMovie.Models.Cars
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cars</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnFabricatie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnFabricatie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodMotor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodMotor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Culoare)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Culoare)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

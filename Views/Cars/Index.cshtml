@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MvcMovie.Models.Cars>
+
+@{
+    ViewData["Title"] = "Evidenta Masini";
+}
+
+<h1>Evidenta Masinii</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-controller="Cars" asp-action="Index">
+    <p>
+        VIN: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnFabricatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodMotor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Culoare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VIN)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnFabricatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodMotor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Culoare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VIN)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
