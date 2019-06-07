@@ -17,7 +17,7 @@ namespace MvcMovie.Models
         [Required]
         [Display(Name = "An Fabricatie")]
         [StringLength(4, MinimumLength = 4)]
-        public int AnFabricatie { get; set; }
+        public string AnFabricatie { get; set; }
         [Display(Name = "Cod Motor")]
         [Required]
         public string CodMotor { get; set; }
@@ -26,6 +26,17 @@ namespace MvcMovie.Models
         [RegularExpression(@"^[A-Z]+[A-Z0123456789\s]*$")]
         [StringLength(17,MinimumLength =17)]
         public string VIN { get; set; }
+        [Required]
+        [RegularExpression(@"[0-9]*$")]
+        [Display(Name = "Kilometraj actual")]
+        public string km { get; set; }
+        [Required]
+        [RegularExpression(@"[0-9]*$")]
+        [StringLength(15, MinimumLength = 1)]
+        public string Pret { get; set; }
+        [Required]
+        [Display(Name = "Lucrari efectuate")]
+        public string Modificari { get; set; }
 
     }
 }

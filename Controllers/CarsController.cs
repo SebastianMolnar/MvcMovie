@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
 
-namespace MvcMovie.Controllers
+namespace MvcMovie.Models
 {
     public class CarsController : Controller
     {
@@ -22,7 +21,7 @@ namespace MvcMovie.Controllers
         public async Task<IActionResult> Index(string searchString)
         {
             var vin = from m in _context.Cars
-                         select m;
+                      select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -32,8 +31,8 @@ namespace MvcMovie.Controllers
             return View(await vin.ToListAsync());
         }
 
-        // GET: Cars/Details/5
-        public async Task<IActionResult> Details(int? id)
+            // GET: Cars/Details/5
+            public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -61,7 +60,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Marca,Model,AnFabricatie,CodMotor,Culoare,VIN")] Cars cars)
+        public async Task<IActionResult> Create([Bind("Id,Marca,Model,AnFabricatie,CodMotor,Culoare,VIN,km,Pret,Modificari")] Cars cars)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +92,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Marca,Model,AnFabricatie,CodMotor,Culoare,VIN")] Cars cars)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Marca,Model,AnFabricatie,CodMotor,Culoare,VIN,km,Pret,Modificari")] Cars cars)
         {
             if (id != cars.Id)
             {

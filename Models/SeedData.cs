@@ -22,10 +22,10 @@ namespace MvcMovie.Models
                 context.Movie.AddRange(
                     new Movie
                     {
-                        Title = "When Harry Met Sally",
-                        ReleaseDate = DateTime.Parse("1989-2-12"),
-                        Genre = "Romantic Comedy",
-                        Price = 7.99M
+                        Title = "Let's be cops",
+                        ReleaseDate = DateTime.Parse("2019-2-12"),
+                        Genre = "Comedy",
+                        Price = 10.99M
                     },
 
                     new Movie
@@ -46,9 +46,9 @@ namespace MvcMovie.Models
 
                     new Movie
                     {
-                        Title = "Rio Bravo",
+                        Title = "World War 2",
                         ReleaseDate = DateTime.Parse("1959-4-15"),
-                        Genre = "Western",
+                        Genre = "Action",
                         Price = 3.99M
                     }
                 );

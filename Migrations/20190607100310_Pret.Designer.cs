@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcMovie.Models;
 
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    partial class MvcMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20190607100310_Pret")]
+    partial class Pret
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,8 +27,7 @@ namespace MvcMovie.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AnFabricatie")
-                        .IsRequired()
+                    b.Property<int>("AnFabricatie")
                         .HasMaxLength(4);
 
                     b.Property<string>("CodMotor")
@@ -43,8 +44,7 @@ namespace MvcMovie.Migrations
                     b.Property<string>("Modificari")
                         .IsRequired();
 
-                    b.Property<string>("Pret")
-                        .IsRequired();
+                    b.Property<int>("Pret");
 
                     b.Property<string>("VIN")
                         .IsRequired()
