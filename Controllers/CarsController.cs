@@ -18,6 +18,7 @@ namespace MvcMovie.Models
         }
 
         // GET: Cars
+        // GET: Movies
         public async Task<IActionResult> Index(string searchString)
         {
             var vin = from m in _context.Cars
@@ -30,9 +31,9 @@ namespace MvcMovie.Models
 
             return View(await vin.ToListAsync());
         }
-
-            // GET: Cars/Details/5
-            public async Task<IActionResult> Details(int? id)
+    
+        // GET: Cars/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
